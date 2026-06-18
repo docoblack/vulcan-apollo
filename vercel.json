@@ -1,0 +1,12 @@
+{
+  "name": "vulcan-apollo",
+  "version": 2,
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/security", "dest": "/security.html" },
+    { "src": "/how-we-protect-your-data", "dest": "/security.html" }
+  ]
+}
