@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vulcan Apollo — Persistent AI Agents for Business Operations</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              900: '#0F172A',
+              800: '#1E2937',
+              700: '#334155',
+            },
+            teal: {
+              300: '#5EEAD4',
+              400: '#2DD4BF',
+              500: '#14B8A6',
+            },
+            cyan: {
+              300: '#67E8F9',
+              400: '#22D3EE',
+              500: '#06B6D4',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -12,7 +41,7 @@
     html { scroll-behavior: smooth; }
     
     .gradient-hero {
-      background: linear-gradient(135deg, #0a0e1a 0%, #1a1f36 50%, #0d1117 100%);
+      background: linear-gradient(135deg, #0a0f24 0%, #0F172A 50%, #0a0f1a 100%);
       position: relative;
       overflow: hidden;
     }
@@ -23,8 +52,8 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(ellipse at 30% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 60%),
-                  radial-gradient(ellipse at 70% 30%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+      background: radial-gradient(ellipse at 30% 50%, rgba(0, 229, 201, 0.07) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 30%, rgba(0, 184, 169, 0.05) 0%, transparent 50%);
       animation: drift 30s ease-in-out infinite alternate;
     }
     @keyframes drift {
@@ -33,25 +62,25 @@
     }
 
     .gradient-card {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(139, 92, 246, 0.05));
-      border: 1px solid rgba(99, 102, 241, 0.15);
+      background: linear-gradient(135deg, rgba(0, 229, 201, 0.06), rgba(0, 184, 169, 0.03));
+      border: 1px solid rgba(0, 229, 201, 0.12);
     }
     .gradient-card:hover {
-      border-color: rgba(99, 102, 241, 0.35);
+      border-color: rgba(0, 229, 201, 0.35);
       transform: translateY(-2px);
       transition: all 0.3s ease;
     }
 
     .glass-nav {
-      background: rgba(10, 14, 26, 0.85);
+      background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .grid-pattern {
       background-image: 
-        linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(0, 229, 201, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 201, 0.03) 1px, transparent 1px);
       background-size: 60px 60px;
     }
 
@@ -59,13 +88,13 @@
       transition: all 0.2s ease;
     }
     .role-row:hover {
-      background: rgba(99, 102, 241, 0.06);
+      background: rgba(0, 229, 201, 0.05);
     }
 
     .pulse-dot {
       width: 8px;
       height: 8px;
-      background: #22c55e;
+      background: #00E5C9;
       border-radius: 50%;
       display: inline-block;
       animation: pulse 2s infinite;
@@ -76,10 +105,10 @@
     }
 
     .cta-gradient {
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      background: linear-gradient(135deg, #00E5C9, #00B8A9);
     }
     .cta-gradient:hover {
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      background: linear-gradient(135deg, #00C4B0, #009E91);
     }
 
     .service-icon {
@@ -96,7 +125,7 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      background: linear-gradient(135deg, #00E5C9, #00B8A9);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -106,14 +135,14 @@
     }
   </style>
 </head>
-<body class="bg-[#0a0e1a] text-gray-100 antialiased">
+<body class="bg-[#0F172A] text-gray-100 antialiased">
 
   <!-- ===== NAV ===== -->
   <nav class="glass-nav fixed top-0 w-full z-50 py-3 px-4 sm:px-8">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="text-2xl">&#9889;</span>
-        <span class="text-xl font-bold tracking-tight">Vulcan <span class="text-indigo-400">Apollo</span></span>
+        <span class="text-xl font-bold tracking-tight">Vulcan <span style="color:#00E5C9">Apollo</span></span>
       </div>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
         <a href="#services" class="hover:text-white transition">Services</a>
@@ -123,7 +152,7 @@
         <a href="#case-studies" class="hover:text-white transition">Case Studies</a>
         <a href="#blog" class="hover:text-white transition">Blog</a>
       </div>
-      <a href="#contact" class="cta-gradient text-white px-5 py-2 rounded-lg text-sm font-semibold hover:shadow-lg hover:shadow-indigo-500/25 transition-all">
+      <a href="#contact" class="cta-gradient text-white px-5 py-2 rounded-lg text-sm font-semibold hover:shadow-lg transition-all" style="box-shadow: 0 4px 14px rgba(0, 229, 201, 0.25);">
         Book a Consultation
       </a>
     </div>
@@ -133,13 +162,13 @@
   <section class="gradient-hero min-h-screen flex items-center pt-20 pb-16 px-4 sm:px-8">
     <div class="max-w-7xl mx-auto w-full relative z-10">
       <div class="max-w-4xl">
-        <div class="flex items-center gap-2 text-sm text-indigo-300 mb-6">
+        <div class="flex items-center gap-2 text-sm mb-6" style="color:#5EEAD4">
           <span class="pulse-dot"></span>
           <span>Enterprise-Grade Persistent AI</span>
         </div>
         <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6">
           Persistent AI Agents<br>
-          <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">That Run Your Business Operations</span>
+          <span class="bg-gradient-to-r" style="background: linear-gradient(90deg, #00E5C9, #2DD4BF, #6366F1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">That Run Your Business Operations</span>
         </h1>
         <p class="text-lg sm:text-xl text-gray-400 max-w-2xl leading-relaxed mb-10">
           Persistent autonomous agents + UiPath RPA + C# engineering. 
@@ -147,11 +176,11 @@
           across HR, Admin, Finance, IT, and Customer Support — with persistent memory that learns from every interaction.
         </p>
         <div class="flex flex-wrap gap-4">
-          <a href="#contact" class="cta-gradient text-white px-8 py-3.5 rounded-xl text-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/30 transition-all inline-flex items-center gap-2">
+          <a href="#contact" class="cta-gradient text-white px-8 py-3.5 rounded-xl text-lg font-semibold hover:shadow-lg transition-all inline-flex items-center gap-2" style="box-shadow: 0 4px 14px rgba(0, 229, 201, 0.3);">
             Get Your Free Automation Audit
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
-          <a href="#ai-employees" class="border border-gray-700 text-gray-300 px-8 py-3.5 rounded-xl text-lg font-semibold hover:border-indigo-500 hover:text-white transition-all">
+          <a href="#ai-employees" class="border border-gray-700 text-gray-300 px-8 py-3.5 rounded-xl text-lg font-semibold hover:border-[#00E5C9] hover:text-white transition-all">
             See What's Replaceable
           </a>
         </div>
@@ -185,10 +214,10 @@
   </section>
 
   <!-- ===== SERVICES ===== -->
-  <section id="services" class="py-24 px-4 sm:px-8 bg-[#0d1117]">
+  <section id="services" class="py-24 px-4 sm:px-8 bg-[#1E2937]">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
-        <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">What We Do</span>
+        <span class="text-sm font-semibold tracking-widest uppercase" style="color:#00E5C9">What We Do</span>
         <h2 class="text-3xl sm:text-5xl font-extrabold mt-3 mb-4">We don't just automate tasks &mdash; <br>we deploy persistent agents that run entire departments.</h2>
         <p class="text-gray-500 max-w-2xl mx-auto">Every service is built on the same core: persistent AI + UiPath automation + C# enterprise engineering.</p>
       </div>
@@ -196,60 +225,60 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Card 1: AI-Powered HR -->
         <div class="gradient-card rounded-2xl p-8 cursor-pointer group">
-          <div class="service-icon bg-indigo-500/10 text-indigo-400 mb-5">&#x1F468;&#x200D;&#x1F3ED;</div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">AI-Powered HR Automation</h3>
+          <div class="service-icon mb-5" style="background: rgba(0, 229, 201, 0.1); color:#00E5C9;">&#x1F468;&#x200D;&#x1F3ED;</div>
+          <h3 class="text-xl font-bold text-white mb-3 transition-colors group-hover" style="color:#00E5C9">AI-Powered HR Automation</h3>
           <p class="text-gray-400 text-sm leading-relaxed mb-4">Pre-built persistent agents that handle 70-90% of transactional HR work: employee Q&A, onboarding, leave, expenses, resumes, compliance.</p>
-          <div class="flex items-center gap-2 text-indigo-400 text-sm font-medium">
+          <div class="flex items-center gap-2 text-sm font-medium" style="color:#00E5C9">
             Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </div>
         </div>
 
         <!-- Card 2: AI Employee Agents -->
         <div class="gradient-card rounded-2xl p-8 cursor-pointer group">
-          <div class="service-icon bg-purple-500/10 text-purple-400 mb-5">&#x1F916;</div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">AI Employee Agents</h3>
+          <div class="service-icon mb-5" style="background: rgba(99, 102, 241, 0.1); color:#818CF8;">&#x1F916;</div>
+          <h3 class="text-xl font-bold text-white mb-3 transition-colors group-hover" style="color:#818CF8">AI Employee Agents</h3>
           <p class="text-gray-400 text-sm leading-relaxed mb-4">10+ role-specific agents: Admin Assistant, Data Entry, Customer Support, Payroll, Recruiting, Bookkeeping, IT Support, SDR, Compliance &amp; more.</p>
-          <div class="flex items-center gap-2 text-purple-400 text-sm font-medium">
+          <div class="flex items-center gap-2 text-sm font-medium" style="color:#818CF8">
             Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </div>
         </div>
 
         <!-- Card 3: Custom UiPath RPA Development -->
         <div class="gradient-card rounded-2xl p-8 cursor-pointer group">
-          <div class="service-icon bg-emerald-500/10 text-emerald-400 mb-5">&#x2699;&#xFE0F;</div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">Custom UiPath RPA Development</h3>
+          <div class="service-icon mb-5" style="background: rgba(16, 185, 129, 0.1); color:#34D399;">&#x2699;&#xFE0F;</div>
+          <h3 class="text-xl font-bold text-white mb-3 transition-colors group-hover" style="color:#34D399">Custom UiPath RPA Development</h3>
           <p class="text-gray-400 text-sm leading-relaxed mb-4">Bespoke RPA applications built by senior C# / UiPath developers. Full lifecycle &mdash; process discovery, development, testing, deployment, and thorough documentation.</p>
-          <div class="flex items-center gap-2 text-emerald-400 text-sm font-medium">
+          <div class="flex items-center gap-2 text-sm font-medium" style="color:#34D399">
             Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </div>
         </div>
 
         <!-- Card 4: C# / .NET Development -->
         <div class="gradient-card rounded-2xl p-8 cursor-pointer group">
-          <div class="service-icon bg-blue-500/10 text-blue-400 mb-5">&lt;/&gt;</div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">Custom C# / .NET Development</h3>
+          <div class="service-icon mb-5" style="background: rgba(59, 130, 246, 0.1); color:#60A5FA;">&lt;/&gt;</div>
+          <h3 class="text-xl font-bold text-white mb-3 transition-colors group-hover" style="color:#60A5FA">Custom C# / .NET Development</h3>
           <p class="text-gray-400 text-sm leading-relaxed mb-4">Custom AI agent architectures, enterprise integrations, API development, and full-stack .NET solutions tailored to your business.</p>
-          <div class="flex items-center gap-2 text-blue-400 text-sm font-medium">
+          <div class="flex items-center gap-2 text-sm font-medium" style="color:#60A5FA">
             Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </div>
         </div>
 
         <!-- Card 5: Consulting -->
         <div class="gradient-card rounded-2xl p-8 cursor-pointer group">
-          <div class="service-icon bg-amber-500/10 text-amber-400 mb-5">&#x1F4CA;</div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">AI Agent Consulting</h3>
+          <div class="service-icon mb-5" style="background: rgba(245, 158, 11, 0.1); color:#FBBF24;">&#x1F4CA;</div>
+          <h3 class="text-xl font-bold text-white mb-3 transition-colors group-hover" style="color:#FBBF24">AI Agent Consulting</h3>
           <p class="text-gray-400 text-sm leading-relaxed mb-4">Automation strategy audits, workflow analysis, ROI projections. We identify exactly which roles in your org are replaceable and by how much.</p>
-          <div class="flex items-center gap-2 text-amber-400 text-sm font-medium">
+          <div class="flex items-center gap-2 text-sm font-medium" style="color:#FBBF24">
             Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </div>
         </div>
 
         <!-- Card 6: Managed Services -->
         <div class="gradient-card rounded-2xl p-8 cursor-pointer group">
-          <div class="service-icon bg-rose-500/10 text-rose-400 mb-5">&#x1F6E1;&#xFE0F;</div>
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-rose-400 transition-colors">Managed Automation Services</h3>
+          <div class="service-icon mb-5" style="background: rgba(244, 63, 94, 0.1); color:#FB7185;">&#x1F6E1;&#xFE0F;</div>
+          <h3 class="text-xl font-bold text-white mb-3 transition-colors group-hover" style="color:#FB7185">Managed Automation Services</h3>
           <p class="text-gray-400 text-sm leading-relaxed mb-4">We host, monitor, and continuously improve your AI employees. Dashboard oversight, human escalation pipelines, and monthly optimization included.</p>
-          <div class="flex items-center gap-2 text-rose-400 text-sm font-medium">
+          <div class="flex items-center gap-2 text-sm font-medium" style="color:#FB7185">
             Learn more <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </div>
         </div>
@@ -258,19 +287,19 @@
   </section>
 
   <!-- ===== AI EMPLOYEE ROLE RANKING ===== -->
-  <section id="ai-employees" class="py-24 px-4 sm:px-8 bg-[#0a0e1a]">
+  <section id="ai-employees" class="py-24 px-4 sm:px-8 bg-[#0F172A]">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
-        <span class="text-purple-400 text-sm font-semibold tracking-widest uppercase">The 10 Most Replaceable Roles</span>
+        <span class="text-sm font-semibold tracking-widest uppercase" style="color:#00E5C9">The 10 Most Replaceable Roles</span>
         <h2 class="text-3xl sm:text-5xl font-extrabold mt-3 mb-4">Your next 10 employees don't need <br>desks, salaries, or coffee breaks.</h2>
         <p class="text-gray-500 max-w-2xl mx-auto">Each role below maps to a pre-configured persistent AI agent + UiPath workflow. Deploy in days, not months.</p>
       </div>
 
       <!-- Table -->
-      <div class="overflow-x-auto rounded-2xl border border-gray-800">
+      <div class="overflow-x-auto rounded-2xl border border-[#1E2937]">
         <table class="w-full text-sm">
           <thead>
-            <tr class="bg-gray-800/50 text-gray-400 uppercase tracking-wider text-xs">
+            <tr class="bg-[#1E2937]/50 text-gray-400 uppercase tracking-wider text-xs">
               <th class="text-left py-4 px-6 font-semibold">Rank</th>
               <th class="text-left py-4 px-6 font-semibold">Role Category</th>
               <th class="text-left py-4 px-6 font-semibold hidden md:table-cell">% Automatable</th>
@@ -278,83 +307,83 @@
               <th class="text-left py-4 px-6 font-semibold hidden md:table-cell">Service Opportunity</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-gray-800">
+          <tbody class="divide-y divide-[#1E2937]">
             <tr class="role-row">
-              <td class="py-4 px-6 text-2xl font-bold text-indigo-400">1</td>
+              <td class="py-4 px-6 text-2xl font-bold" style="color:#00E5C9">1</td>
               <td class="py-4 px-6 font-semibold text-white">HR Managers &amp; People Operations</td>
               <td class="py-4 px-6 hidden md:table-cell"><span class="text-emerald-400 font-bold">70-90%</span></td>
               <td class="py-4 px-6 text-gray-400 hidden lg:table-cell">Employee Q&A, policy enforcement, onboarding/offboarding, leave management, compliance tracking, benefits administration</td>
-              <td class="py-4 px-6 hidden md:table-cell"><span class="bg-pink-500/10 text-pink-300 px-3 py-1 rounded-full text-xs font-medium">Flagship — HR Agent</span></td>
+              <td class="py-4 px-6 hidden md:table-cell"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(0, 229, 201, 0.12); color:#5EEAD4;">Flagship — HR Agent</span></td>
             </tr>
             <tr class="role-row">
-              <td class="py-4 px-6 text-2xl font-bold text-indigo-400">2</td>
+              <td class="py-4 px-6 text-2xl font-bold" style="color:#00E5C9">2</td>
               <td class="py-4 px-6 font-semibold text-white">Administrative Assistants / EAs</td>
               <td class="py-4 px-6 hidden md:table-cell"><span class="text-emerald-400 font-bold">70-90%</span></td>
               <td class="py-4 px-6 text-gray-400 hidden lg:table-cell">Scheduling, email triage, meeting notes, travel booking, document prep</td>
-              <td class="py-4 px-6 hidden md:table-cell"><span class="bg-indigo-500/10 text-indigo-300 px-3 py-1 rounded-full text-xs font-medium">Virtual EA Subscription</span></td>
+              <td class="py-4 px-6 hidden md:table-cell"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(99, 102, 241, 0.12); color:#A5B4FC;">Virtual EA Subscription</span></td>
             </tr>
             <tr class="role-row">
-              <td class="py-4 px-6 text-2xl font-bold text-indigo-400">3</td>
+              <td class="py-4 px-6 text-2xl font-bold" style="color:#00E5C9">3</td>
               <td class="py-4 px-6 font-semibold text-white">Data Entry / Clerical / Back-Office</td>
               <td class="py-4 px-6 hidden md:table-cell"><span class="text-emerald-400 font-bold">85-95%</span></td>
               <td class="py-4 px-6 text-gray-400 hidden lg:table-cell">Form filling, data migration, invoice processing, reconciliation</td>
-              <td class="py-4 px-6 hidden md:table-cell"><span class="bg-emerald-500/10 text-emerald-300 px-3 py-1 rounded-full text-xs font-medium">Quick Win Pack</span></td>
+              <td class="py-4 px-6 hidden md:table-cell"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(16, 185, 129, 0.12); color:#6EE7B7;">Quick Win Pack</span></td>
             </tr>
             <tr class="role-row">
-              <td class="py-4 px-6 text-2xl font-bold text-indigo-400">4</td>
+              <td class="py-4 px-6 text-2xl font-bold" style="color:#00E5C9">4</td>
               <td class="py-4 px-6 font-semibold text-white">Customer Support (Tier 1)</td>
               <td class="py-4 px-6 hidden md:table-cell"><span class="text-emerald-400 font-bold">70-85%</span></td>
               <td class="py-4 px-6 text-gray-400 hidden lg:table-cell">Common queries, ticket routing, password resets, status checks</td>
-              <td class="py-4 px-6 hidden md:table-cell"><span class="bg-blue-500/10 text-blue-300 px-3 py-1 rounded-full text-xs font-medium">24/7 Support Agent</span></td>
+              <td class="py-4 px-6 hidden md:table-cell"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(59, 130, 246, 0.12); color:#93C5FD;">24/7 Support Agent</span></td>
             </tr>
             <tr class="role-row">
-              <td class="py-4 px-6 text-2xl font-bold text-indigo-400">5</td>
+              <td class="py-4 px-6 text-2xl font-bold" style="color:#00E5C9">5</td>
               <td class="py-4 px-6 font-semibold text-white">Payroll &amp; Benefits Clerks</td>
               <td class="py-4 px-6 hidden md:table-cell"><span class="text-emerald-400 font-bold">75-90%</span></td>
               <td class="py-4 px-6 text-gray-400 hidden lg:table-cell">Payroll processing, leave requests, benefits enrollment, tax forms</td>
-              <td class="py-4 px-6 hidden md:table-cell"><span class="bg-purple-500/10 text-purple-300 px-3 py-1 rounded-full text-xs font-medium">Rules-Heavy</span></td>
+              <td class="py-4 px-6 hidden md:table-cell"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(139, 92, 246, 0.12); color:#C4B5FD;">Rules-Heavy</span></td>
             </tr>
             <tr class="role-row">
-              <td class="py-4 px-6 text-2xl font-bold text-indigo-400">6</td>
+              <td class="py-4 px-6 text-2xl font-bold" style="color:#00E5C9">6</td>
               <td class="py-4 px-6 font-semibold text-white">Recruiting Coordinators / TA Support</td>
               <td class="py-4 px-6 hidden md:table-cell"><span class="text-emerald-400 font-bold">65-80%</span></td>
               <td class="py-4 px-6 text-gray-400 hidden lg:table-cell">Resume screening, interview scheduling, initial outreach, candidate tracking</td>
-              <td class="py-4 px-6 hidden md:table-cell"><span class="bg-pink-500/10 text-pink-300 px-3 py-1 rounded-full text-xs font-medium">HR Add-On</span></td>
+              <td class="py-4 px-6 hidden md:table-cell"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(236, 72, 153, 0.12); color:#F9A8D4;">HR Add-On</span></td>
             </tr>
             <tr class="role-row">
-              <td class="py-4 px-6 text-2xl font-bold text-indigo-400">7</td>
+              <td class="py-4 px-6 text-2xl font-bold" style="color:#00E5C9">7</td>
               <td class="py-4 px-6 font-semibold text-white">Bookkeepers &amp; Accounting Clerks</td>
               <td class="py-4 px-6 hidden md:table-cell"><span class="text-emerald-400 font-bold">70-85%</span></td>
               <td class="py-4 px-6 text-gray-400 hidden lg:table-cell">Invoice matching, expense categorization, basic reporting, reconciliations</td>
-              <td class="py-4 px-6 hidden md:table-cell"><span class="bg-emerald-500/10 text-emerald-300 px-3 py-1 rounded-full text-xs font-medium">Finance Pack</span></td>
+              <td class="py-4 px-6 hidden md:table-cell"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(16, 185, 129, 0.12); color:#6EE7B7;">Finance Pack</span></td>
             </tr>
             <tr class="role-row">
-              <td class="py-4 px-6 text-2xl font-bold text-indigo-400">8</td>
+              <td class="py-4 px-6 text-2xl font-bold" style="color:#00E5C9">8</td>
               <td class="py-4 px-6 font-semibold text-white">Content Moderators (Routine)</td>
               <td class="py-4 px-6 hidden md:table-cell"><span class="text-yellow-400 font-bold">60-80%</span></td>
               <td class="py-4 px-6 text-gray-400 hidden lg:table-cell">Flagging violations, basic post/comment review</td>
-              <td class="py-4 px-6 hidden md:table-cell"><span class="bg-yellow-500/10 text-yellow-300 px-3 py-1 rounded-full text-xs font-medium">Escalation Rules</span></td>
+              <td class="py-4 px-6 hidden md:table-cell"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(245, 158, 11, 0.12); color:#FCD34D;">Escalation Rules</span></td>
             </tr>
             <tr class="role-row">
-              <td class="py-4 px-6 text-2xl font-bold text-indigo-400">9</td>
+              <td class="py-4 px-6 text-2xl font-bold" style="color:#00E5C9">9</td>
               <td class="py-4 px-6 font-semibold text-white">IT Support (Level 1)</td>
               <td class="py-4 px-6 hidden md:table-cell"><span class="text-emerald-400 font-bold">65-80%</span></td>
               <td class="py-4 px-6 text-gray-400 hidden lg:table-cell">Password resets, software troubleshooting, access provisioning</td>
-              <td class="py-4 px-6 hidden md:table-cell"><span class="bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full text-xs font-medium">Tool-Integration</span></td>
+              <td class="py-4 px-6 hidden md:table-cell"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(6, 182, 212, 0.12); color:#67E8F9;">Tool-Integration</span></td>
             </tr>
             <tr class="role-row">
-              <td class="py-4 px-6 text-2xl font-bold text-indigo-400">10</td>
+              <td class="py-4 px-6 text-2xl font-bold" style="color:#00E5C9">10</td>
               <td class="py-4 px-6 font-semibold text-white">Sales Development Reps (SDR)</td>
               <td class="py-4 px-6 hidden md:table-cell"><span class="text-yellow-400 font-bold">50-70%</span></td>
               <td class="py-4 px-6 text-gray-400 hidden lg:table-cell">Lead qualification, initial emails/calls, meeting booking</td>
-              <td class="py-4 px-6 hidden md:table-cell"><span class="bg-orange-500/10 text-orange-300 px-3 py-1 rounded-full text-xs font-medium">Multi-Channel</span></td>
+              <td class="py-4 px-6 hidden md:table-cell"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(249, 115, 22, 0.12); color:#FDBA74;">Multi-Channel</span></td>
             </tr>
             <tr class="role-row border-b-0">
-              <td class="py-4 px-6 text-2xl font-bold text-indigo-400">11</td>
+              <td class="py-4 px-6 text-2xl font-bold" style="color:#00E5C9">11</td>
               <td class="py-4 px-6 font-semibold text-white">Compliance &amp; Audit Assistants</td>
               <td class="py-4 px-6 hidden md:table-cell"><span class="text-emerald-400 font-bold">60-75%</span></td>
               <td class="py-4 px-6 text-gray-400 hidden lg:table-cell">Routine checks, document collection, basic reporting</td>
-              <td class="py-4 px-6 hidden md:table-cell"><span class="bg-red-500/10 text-red-300 px-3 py-1 rounded-full text-xs font-medium">Fast Growing</span></td>
+              <td class="py-4 px-6 hidden md:table-cell"><span class="px-3 py-1 rounded-full text-xs font-medium" style="background: rgba(239, 68, 68, 0.12); color:#FCA5A5;">Fast Growing</span></td>
             </tr>
           </tbody>
         </table>
@@ -362,7 +391,7 @@
 
       <!-- Pricing Tiers -->
       <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="border border-gray-800 rounded-2xl p-8 text-center hover:border-indigo-500/30 transition-all">
+        <div class="border border-[#1E2937] rounded-2xl p-8 text-center hover:border-[#00E5C9]/30 transition-all">
           <h3 class="text-lg font-bold text-white mb-2">Single Role Agent</h3>
           <p class="text-3xl font-extrabold text-white mb-1">Contact us</p>
           <p class="text-gray-500 text-sm mb-6">per agent / per month</p>
@@ -371,10 +400,10 @@
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Policy &amp; data feed setup</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Human escalation pipeline</li>
           </ul>
-          <a href="#contact" class="block w-full cta-gradient text-white py-3 rounded-xl font-semibold text-sm hover:shadow-lg transition-all">Get Started</a>
+          <a href="#contact" class="block w-full cta-gradient text-white py-3 rounded-xl font-semibold text-sm hover:shadow-lg transition-all" style="box-shadow: 0 4px 14px rgba(0, 229, 201, 0.25);">Get Started</a>
         </div>
-        <div class="border-2 border-indigo-500 rounded-2xl p-8 text-center relative">
-          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-500 text-white text-xs font-bold px-4 py-1 rounded-full">Most Popular</span>
+        <div class="rounded-2xl p-8 text-center relative" style="border: 2px solid #00E5C9;">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-white text-xs font-bold px-4 py-1 rounded-full" style="background: #00E5C9; color: #0F172A;">Most Popular</span>
           <h3 class="text-lg font-bold text-white mb-2">Department Pack</h3>
           <p class="text-3xl font-extrabold text-white mb-1">Contact us</p>
           <p class="text-gray-500 text-sm mb-6">3 agents / per month</p>
@@ -384,9 +413,9 @@
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Department dashboard + analytics</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Priority support</li>
           </ul>
-          <a href="#contact" class="block w-full cta-gradient text-white py-3 rounded-xl font-semibold text-sm hover:shadow-lg transition-all">Get Started</a>
+          <a href="#contact" class="block w-full cta-gradient text-white py-3 rounded-xl font-semibold text-sm hover:shadow-lg transition-all" style="box-shadow: 0 4px 14px rgba(0, 229, 201, 0.25);">Get Started</a>
         </div>
-        <div class="border border-gray-800 rounded-2xl p-8 text-center hover:border-indigo-500/30 transition-all">
+        <div class="border border-[#1E2937] rounded-2xl p-8 text-center hover:border-[#00E5C9]/30 transition-all">
           <h3 class="text-lg font-bold text-white mb-2">Enterprise Suite</h3>
           <p class="text-3xl font-extrabold text-white mb-1">Custom</p>
           <p class="text-gray-500 text-sm mb-6">full suite + oversight</p>
@@ -396,17 +425,17 @@
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Ops dashboard + SLA guarantees</li>
             <li class="flex items-start gap-2"><svg class="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Dedicated support team</li>
           </ul>
-          <a href="#contact" class="block w-full border border-gray-700 text-gray-300 py-3 rounded-xl font-semibold text-sm hover:border-indigo-500 hover:text-white transition-all">Contact Us</a>
+          <a href="#contact" class="block w-full border border-gray-700 text-gray-300 py-3 rounded-xl font-semibold text-sm hover:border-[#00E5C9] hover:text-white transition-all">Contact Us</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== HOW IT WORKS ===== -->
-  <section class="py-24 px-4 sm:px-8 bg-[#0d1117]">
+  <section class="py-24 px-4 sm:px-8 bg-[#1E2937]">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-16">
-        <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">How It Works</span>
+        <span class="text-sm font-semibold tracking-widest uppercase" style="color:#00E5C9">How It Works</span>
         <h2 class="text-3xl sm:text-5xl font-extrabold mt-3">From audit to deployment in 7 days.</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -430,7 +459,7 @@
   </section>
 
   <!-- ===== SECURITY & DATA PROTECTION ===== -->
-  <section id="security" class="py-24 px-4 sm:px-8 bg-[#0d1117]">
+  <section id="security" class="py-24 px-4 sm:px-8 bg-[#0F172A]">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
         <span class="text-emerald-400 text-sm font-semibold tracking-widest uppercase">Security &amp; Data Protection</span>
@@ -438,28 +467,28 @@
         <p class="text-gray-500 max-w-2xl mx-auto">We design every intelligent agent and automation solution with enterprise-grade protection from the ground up.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <div class="border border-gray-800 rounded-2xl p-6 text-center hover:border-emerald-500/30 transition-all">
+        <div class="border border-[#1E2937] rounded-2xl p-6 text-center hover:border-emerald-500/30 transition-all">
           <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
           </div>
           <h3 class="font-semibold text-white mb-2">Data Sovereignty</h3>
           <p class="text-sm text-gray-500">Your data never leaves your control unless you explicitly choose our managed hosting.</p>
         </div>
-        <div class="border border-gray-800 rounded-2xl p-6 text-center hover:border-emerald-500/30 transition-all">
+        <div class="border border-[#1E2937] rounded-2xl p-6 text-center hover:border-emerald-500/30 transition-all">
           <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
           <h3 class="font-semibold text-white mb-2">Defense in Depth</h3>
           <p class="text-sm text-gray-500">Strong encryption at rest, in transit, and in use. Zero-trust architecture with strict tenant isolation.</p>
         </div>
-        <div class="border border-gray-800 rounded-2xl p-6 text-center hover:border-emerald-500/30 transition-all">
+        <div class="border border-[#1E2937] rounded-2xl p-6 text-center hover:border-emerald-500/30 transition-all">
           <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
           </div>
           <h3 class="font-semibold text-white mb-2">Compliance Ready</h3>
           <p class="text-sm text-gray-500">GDPR, CCPA, SOC 2 Type II ready, HIPAA-ready configurations available. Full DPA on request.</p>
         </div>
-        <div class="border border-gray-800 rounded-2xl p-6 text-center hover:border-emerald-500/30 transition-all">
+        <div class="border border-[#1E2937] rounded-2xl p-6 text-center hover:border-emerald-500/30 transition-all">
           <div class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
           </div>
@@ -477,11 +506,11 @@
   </section>
 
   <!-- ===== ABOUT ===== -->
-  <section id="about" class="py-24 px-4 sm:px-8 bg-[#0a0e1a]">
+  <section id="about" class="py-24 px-4 sm:px-8 bg-[#0F172A]">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
-          <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">About Vulcan Apollo</span>
+          <span class="text-sm font-semibold tracking-widest uppercase" style="color:#00E5C9">About Vulcan Apollo</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 mb-6">Built by a senior C# developer and UiPath expert who got tired of the buzzwords.</h2>
           <p class="text-gray-400 leading-relaxed mb-6">
             Most "AI automation" vendors sell you a chatbot and call it a day. We deploy <strong class="text-white">persistent agents with memory</strong> that actually do the work &mdash; engineered with <strong class="text-white">UiPath RPA</strong> and <strong class="text-white">C# / .NET</strong>.
@@ -504,7 +533,7 @@
             </div>
           </div>
         </div>
-        <div class="grid-pattern border border-gray-800 rounded-2xl p-8 lg:p-12">
+        <div class="grid-pattern border border-[#1E2937] rounded-2xl p-8 lg:p-12">
           <h3 class="text-xl font-bold text-white mb-6">Our Technology</h3>
           <div class="space-y-6">
             <div class="flex items-start gap-4">
@@ -542,10 +571,10 @@
   </section>
 
   <!-- ===== CASE STUDY PREVIEWS ===== -->
-  <section id="case-studies" class="py-24 px-4 sm:px-8 bg-[#0d1117]">
+  <section id="case-studies" class="py-24 px-4 sm:px-8 bg-[#1E2937]">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
-        <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">Real Results</span>
+        <span class="text-sm font-semibold tracking-widest uppercase" style="color:#00E5C9">Real Results</span>
         <h2 class="text-3xl sm:text-5xl font-extrabold mt-3 mb-4">Case studies coming soon.</h2>
         <p class="text-gray-500 max-w-2xl mx-auto">We'll showcase measurable ROI from real deployments &mdash; hours recovered, headcount reduced, errors eliminated.</p>
       </div>
@@ -570,26 +599,26 @@
   </section>
 
   <!-- ===== BLOG TEASER ===== -->
-  <section id="blog" class="py-24 px-4 sm:px-8 bg-[#0a0e1a]">
+  <section id="blog" class="py-24 px-4 sm:px-8 bg-[#0F172A]">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
-        <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">Insights</span>
+        <span class="text-sm font-semibold tracking-widest uppercase" style="color:#00E5C9">Insights</span>
         <h2 class="text-3xl sm:text-5xl font-extrabold mt-3 mb-4">Articles &amp; resources.</h2>
         <p class="text-gray-500 max-w-2xl mx-auto">Deep dives into AI agent architecture, real-world automation strategy, and the future of work.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="border border-gray-800 rounded-2xl p-6 hover:border-gray-700 transition-all">
-          <div class="text-xs text-indigo-400 font-semibold mb-3">Coming Soon</div>
+        <div class="border border-[#1E2937] rounded-2xl p-6 hover:border-gray-700 transition-all">
+          <div class="text-xs font-semibold mb-3" style="color:#00E5C9">Coming Soon</div>
           <h3 class="font-bold text-white mb-2">10 Roles AI Agents Can Replace in 2026</h3>
           <p class="text-sm text-gray-500">A realistic ranking of the roles most susceptible to persistent AI agents &mdash; and why hybrid is the winning model.</p>
         </div>
-        <div class="border border-gray-800 rounded-2xl p-6 hover:border-gray-700 transition-all">
-          <div class="text-xs text-indigo-400 font-semibold mb-3">Coming Soon</div>
+        <div class="border border-[#1E2937] rounded-2xl p-6 hover:border-gray-700 transition-all">
+          <div class="text-xs font-semibold mb-3" style="color:#00E5C9">Coming Soon</div>
           <h3 class="font-bold text-white mb-2">Persistent AI Agents vs Chatbots</h3>
           <p class="text-sm text-gray-500">Long-term memory is the difference between a toy and a tool. Here's what changes when your agent never forgets.</p>
         </div>
-        <div class="border border-gray-800 rounded-2xl p-6 hover:border-gray-700 transition-all">
-          <div class="text-xs text-indigo-400 font-semibold mb-3">Coming Soon</div>
+        <div class="border border-[#1E2937] rounded-2xl p-6 hover:border-gray-700 transition-all">
+          <div class="text-xs font-semibold mb-3" style="color:#00E5C9">Coming Soon</div>
           <h3 class="font-bold text-white mb-2">The ROI of AI Agents</h3>
           <p class="text-sm text-gray-500">What 60-80% workload reduction actually means for your bottom line. Hard numbers, not hype.</p>
         </div>
@@ -598,40 +627,40 @@
   </section>
 
   <!-- ===== CONTACT / LEAD CAPTURE ===== -->
-  <section id="contact" class="py-24 px-4 sm:px-8 bg-[#0d1117]">
+  <section id="contact" class="py-24 px-4 sm:px-8 bg-[#1E2937]">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="text-indigo-400 text-sm font-semibold tracking-widest uppercase">Start Here</span>
-        <h2 class="text-3xl sm:text-5xl font-extrabold mt-3 mb-4">Get your free automation audit.</h2>
-        <p class="text-gray-500 max-w-xl mx-auto">We'll analyze your current operations, identify the highest-ROI roles for AI employee deployment, and give you a roadmap &mdash; no obligation.</p>
+      <div class="text-center mb-16">
+        <span class="text-sm font-semibold tracking-widest uppercase" style="color:#00E5C9">Get Started</span>
+        <h2 class="text-3xl sm:text-5xl font-extrabold mt-3 mb-4">Ready to deploy your first AI employee?</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">Tell us about your operations and we'll identify your highest-ROI automation opportunities &mdash; free, no commitment.</p>
       </div>
-      <div class="border border-gray-800 rounded-2xl p-8 md:p-12">
-        <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="border border-[#1E2937] rounded-2xl p-8 lg:p-12 gradient-card">
+        <form action="#" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label class="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
-            <input type="text" placeholder="Your name" class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors">
+            <label class="block text-sm font-medium text-gray-400 mb-2">Name</label>
+            <input type="text" required class="w-full bg-[#0F172A] border border-[#1E2937] rounded-lg px-4 py-3 text-white text-sm focus:outline-none transition-all" style="border-color: rgba(0, 229, 201, 0.2);">
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-400 mb-2">Email</label>
-            <input type="email" placeholder="you@company.com" class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors">
+            <input type="email" required class="w-full bg-[#0F172A] border border-[#1E2937] rounded-lg px-4 py-3 text-white text-sm focus:outline-none transition-all" style="border-color: rgba(0, 229, 201, 0.2);">
           </div>
           <div>
             <label class="block text-sm font-medium text-gray-400 mb-2">Company</label>
-            <input type="text" placeholder="Company name" class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors">
+            <input type="text" class="w-full bg-[#0F172A] border border-[#1E2937] rounded-lg px-4 py-3 text-white text-sm focus:outline-none transition-all" style="border-color: rgba(0, 229, 201, 0.2);">
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-400 mb-2">Your Role</label>
-            <input type="text" placeholder="CTO, HR Director, Ops Manager..." class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors">
+            <label class="block text-sm font-medium text-gray-400 mb-2">Role</label>
+            <input type="text" class="w-full bg-[#0F172A] border border-[#1E2937] rounded-lg px-4 py-3 text-white text-sm focus:outline-none transition-all" style="border-color: rgba(0, 229, 201, 0.2);">
           </div>
           <div class="md:col-span-2">
-            <label class="block text-sm font-medium text-gray-400 mb-2">What would you like to automate?</label>
-            <textarea rows="3" placeholder="Tell us about your biggest operational pain points..." class="w-full bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-indigo-500 transition-colors"></textarea>
+            <label class="block text-sm font-medium text-gray-400 mb-2">What roles or workflows are you looking to automate?</label>
+            <textarea rows="4" class="w-full bg-[#0F172A] border border-[#1E2937] rounded-lg px-4 py-3 text-white text-sm focus:outline-none transition-all" style="border-color: rgba(0, 229, 201, 0.2);"></textarea>
           </div>
           <div class="md:col-span-2">
-            <button type="submit" class="w-full cta-gradient text-white py-4 rounded-xl text-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/25 transition-all">
-              Book My Free Audit
+            <button type="submit" class="w-full cta-gradient text-white py-3.5 rounded-xl font-semibold hover:shadow-lg transition-all" style="box-shadow: 0 4px 14px rgba(0, 229, 201, 0.3);">
+              Get Your Free Automation Audit
             </button>
-            <p class="text-center text-gray-600 text-xs mt-3">We'll respond within 24 hours. No spam, no sales pitches — just a clear automation roadmap.</p>
+            <p class="text-xs text-gray-600 text-center mt-4">We'll respond within 24 hours. No spam, no pressure, no AI salesbot.</p>
           </div>
         </form>
       </div>
@@ -639,28 +668,25 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="py-12 px-4 sm:px-8 bg-[#0a0e1a] border-t border-gray-800">
+  <footer class="py-12 px-4 sm:px-8 bg-[#0F172A] border-t border-[#1E2937]">
     <div class="max-w-7xl mx-auto">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-        <div>
-          <h4 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">Services</h4>
-          <ul class="space-y-2 text-sm text-gray-500">
-            <li><a href="#" class="hover:text-gray-300 transition">HR Automation</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">AI Employee Agents</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">Custom UiPath RPA Development</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">C# / .NET Development</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">Consulting</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">Managed Services</a></li>
-          </ul>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-2xl">&#9889;</span>
+            <span class="text-xl font-bold tracking-tight">Vulcan <span style="color:#00E5C9">Apollo</span></span>
+          </div>
+          <p class="text-sm text-gray-500">Persistent AI agents + UiPath RPA + C# engineering. We don't sell tools &mdash; we sell outcomes.</p>
         </div>
         <div>
           <h4 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">Company</h4>
           <ul class="space-y-2 text-sm text-gray-500">
-            <li><a href="#" class="hover:text-gray-300 transition">About</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">Case Studies</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">Blog</a></li>
-          <li><a href="security.html" class="hover:text-gray-300 transition">Security</a></li>
-            <li><a href="#" class="hover:text-gray-300 transition">Contact</a></li>
+            <li><a href="#about" class="hover:text-gray-300 transition">About</a></li>
+            <li><a href="#services" class="hover:text-gray-300 transition">Services</a></li>
+            <li><a href="#case-studies" class="hover:text-gray-300 transition">Case Studies</a></li>
+            <li><a href="#blog" class="hover:text-gray-300 transition">Blog</a></li>
+            <li><a href="security.html" class="hover:text-gray-300 transition">Security</a></li>
+            <li><a href="#contact" class="hover:text-gray-300 transition">Contact</a></li>
           </ul>
         </div>
         <div>
@@ -682,10 +708,10 @@
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="border-t border-[#1E2937] pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <div class="flex items-center gap-2">
           <span class="text-xl">&#9889;</span>
-          <span class="text-sm font-semibold text-gray-400">Vulcan <span class="text-indigo-400">Apollo</span></span>
+          <span class="text-sm font-semibold text-gray-400">Vulcan <span style="color:#00E5C9">Apollo</span></span>
         </div>
         <p class="text-xs text-gray-600">Persistent AI for Enterprise Operations</p>
         <p class="text-xs text-gray-600">&copy; 2026 Vulcan Apollo. All rights reserved.</p>
